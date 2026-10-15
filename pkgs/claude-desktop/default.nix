@@ -48,6 +48,7 @@
   OVMF,
   pango,
   perl,
+  pipewire,
   qemu,
   systemd,
   trash-cli,
@@ -60,11 +61,11 @@ let
   sources = {
     x86_64-linux = {
       debArch = "amd64";
-      hash = "sha256-PP3bI78pEeBeJ7TtOFa455XflGQ7LDW1nesxfPmVvKA=";
+      hash = "sha256-QXRbCRTw/1FjGh/xu0A7g2v1yZWEXMpnQt05vKOi2hQ=";
     };
     aarch64-linux = {
       debArch = "arm64";
-      hash = "sha256-EI7XnqFksIxPoLtDh97vR3mVez8Pmy2YmONZ82Pr8bw=";
+      hash = "sha256-rW8doqEUIV0qc8U8GploH5wLvhSLkvkG1jWy7+2DXNw=";
     };
   };
 
@@ -106,6 +107,7 @@ let
     nspr
     nss
     pango
+    pipewire
     stdenv.cc.cc.lib
     systemd
     vulkan-loader
@@ -133,7 +135,7 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "claude-desktop";
-  version = "2.9939.4";
+  version = "2.37337.1";
 
   src = fetchurl {
     url = "https://downloads.claude.ai/claude-desktop/apt/stable/pool/main/c/claude-desktop/claude-desktop_${finalAttrs.version}_${source.debArch}.deb";
